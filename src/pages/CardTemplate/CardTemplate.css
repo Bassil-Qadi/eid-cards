@@ -90,6 +90,12 @@ button {
 } */
 
 @media screen and (max-width: 992px) {
+
+    .eid-card {
+        width: 100%;
+        max-width: 100% !important;
+    }
+
     .eid-card__form {
         width: 90%;
     }
