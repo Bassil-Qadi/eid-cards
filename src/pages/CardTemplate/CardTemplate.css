@@ -1,0 +1,88 @@
+@font-face {
+    font-family: 'SWCC-BOLD';
+    src: url('../../assets/fonts/SWCC-4-Bold.otf') format('opentype'); /* Modern Browsers */
+
+    /* Optionally, you can specify font-weight and font-style */
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SWCC-REG';
+    src: url('../../assets/fonts/SWCC-Regular.otf') format('opentype'); /* Modern Browsers */
+
+    /* Optionally, you can specify font-weight and font-style */
+    font-weight: bold;
+    font-style: normal;
+}
+
+.card-template__container {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.eid-card {
+    width: 30rem;
+    max-width: 400px;
+    height: 50rem;
+    padding:2rem 1.75rem;
+    background: url("../../assets/Group\ 3.svg") bottom no-repeat;
+    background-color: #1A2947;
+    background-size: contain;
+    border-radius: 12px;
+}
+
+.eid-card header {
+    width: 120px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    /* background-color: #DDE8F6; */
+    border-radius: 4px;
+}
+
+.eid-card-body {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    margin-top: 60px;
+    /* background-color: red; */
+    height: 80%;
+}
+
+.eid-card-body img {
+    width: 250px;
+    height: 160px;
+    margin-bottom: 40px;
+}
+
+.form-control {
+    width: 100%;
+    direction: rtl;
+}
+
+.eid-card__form {
+    width: 24%;
+    font-family: "Tajawal", sans-serif;
+}
+
+.fullname-text {
+    font-family: 'SWCC-BOLD', sans-serif;
+    text-transform: capitalize;
+}
+
+.position-text {
+    font-family: 'SWCC-REG', sans-serif;
+}
+
+@media screen and (max-width: 992px) {
+    .eid-card__form {
+        width: 90%;
+    }
+}
