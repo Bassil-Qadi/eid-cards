@@ -72,6 +72,10 @@
     font-family: "Tajawal", sans-serif;
 }
 
+button {
+    font-family: "Tajawal", sans-serif !important;
+}
+
 .fullname-text {
     font-family: 'SWCC-BOLD', sans-serif;
     text-transform: capitalize;
@@ -80,6 +84,10 @@
 .position-text {
     font-family: 'SWCC-REG', sans-serif;
 }
+
+/* .eid-card-text {
+    font-size: 1.1em;
+} */
 
 @media screen and (max-width: 992px) {
     .eid-card__form {

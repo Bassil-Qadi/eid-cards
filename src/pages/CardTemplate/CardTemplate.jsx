@@ -60,16 +60,16 @@ export default function CardTemplate() {
         </header>
         <div className="eid-card-body">
           <img src={Img} className="img-fluid" alt="عيدكم مبارك" />
-          <div className="row w-100 text-white mt-2">
+          <div className="row mt-4 w-100 text-white mt-2">
             <div className="col-6">
-              <h5 className="mb-0 fw-bold">
+              <p className="mb-0 fw-bold eid-card-text">
                 I Wish you and your family a very joyful Eid Al-Fitr
-              </h5>
+              </p>
             </div>
             <div className="col-6">
-              <h5 className="mb-0 fw-bold text-end">
+              <p className="mb-0 fw-bold text-end eid-card-text">
                 أتمنى لك ولعائلتك عيد فطر سعيد
-              </h5>
+              </p>
             </div>
           </div>
           <div className="row w-100 mt-5">
@@ -80,6 +80,7 @@ export default function CardTemplate() {
           </div>
         </div>
       </div>
+      <button className="btn btn-primary mt-4" onClick={doCapture}>تنزيل البطاقة</button>
       {/* <div className="eid-card__form d-flex align-items-center justify-content-center flex-column">
       <hr className="w-100" />
         <div class="w-100 mb-3">
