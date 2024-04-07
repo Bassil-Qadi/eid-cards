@@ -99,4 +99,8 @@ button {
     .eid-card__form {
         width: 90%;
     }
+
+    .card-template__container {
+        padding: 3rem 0;
+    }
 }
