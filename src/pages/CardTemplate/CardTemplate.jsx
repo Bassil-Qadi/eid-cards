@@ -3,11 +3,11 @@ import html2canvas from "html2canvas";
 import "./CardTemplate.css";
 
 import Img from "../../assets/Path 9.png";
-import Logo from "../../assets/Logo.svg";
+import Logo from "../../assets/Logo.png";
 
 export default function CardTemplate() {
-  const [fullName, setFullName] = useState("الاسم");
-  const [position, setPosition] = useState("المسمى الوظيفي");
+  const [fullName, setFullName] = useState("انقر هنا لـ كتابة الاسم (اختياري)");
+  const [position, setPosition] = useState("انقر هنا لـ كتابة المسمى الوظيفي (اختياري)");
 
   const cardRef = useRef();
 
@@ -20,10 +20,12 @@ export default function CardTemplate() {
   }
 
   const doCapture = () => {
-    html2canvas(document.getElementById("card")).then((canvas) => {
+    html2canvas(document.getElementById("card"), {
+      
+    }).then((canvas) => {
       simulateDownloadImageClick(
-        canvas.toDataURL("image/jpeg", 0.9),
-        `${fullName}.png`
+        canvas.toDataURL("image/PNG", 0.9),
+        `Happy card by WTIIRA`
       );
     });
   };
@@ -56,11 +58,11 @@ export default function CardTemplate() {
       <div className="eid-card" id="card"  ref={cardRef}>
         <header>
           {/* <p className="m-0">Your Logo</p> */}
-          <img className="img-fluid" width={"50px"} height={"50px"} src={Logo} alt="" />
+          {/* <img className="img-fluid" width={"50px"} height={"50px"} src={Logo} alt="" /> */}
         </header>
         <div className="eid-card-body">
-          <img src={Img} className="img-fluid" alt="عيدكم مبارك" />
-          <div className="row mt-4 w-100 text-white mt-2">
+          {/* <img src={Img} className="img-fluid" alt="عيدكم مبارك" /> */}
+          {/* <div className="row mt-4 w-100 text-white mt-2">
             <div className="col-6">
               <p className="mb-0 fw-bold eid-card-text">
                 I Wish you and your family a very joyful Eid Al-Fitr
@@ -71,16 +73,15 @@ export default function CardTemplate() {
                 أتمنى لك ولعائلتك عيد فطر سعيد
               </p>
             </div>
-          </div>
+          </div> */}
           <div className="row w-100 mt-5">
             <div className="col-xl-12 text-white text-center">
-              <p contentEditable dangerouslySetInnerHTML={{ __html: fullName }} className="mb-0 fw-bold fullname-text"></p>
-              <small className="fw-lighter positon-text" contentEditable dangerouslySetInnerHTML={{ __html: position }}></small>
+              <p contentEditable dangerouslySetInnerHTML={{ __html: fullName }} className="mb-0 fullname-text"></p>
+              <small className="fw-lighter position-text" contentEditable dangerouslySetInnerHTML={{ __html: position }}></small>
             </div>
           </div>
         </div>
       </div>
-      <button className="btn btn-primary mt-4" onClick={doCapture}>تنزيل البطاقة</button>
       {/* <div className="eid-card__form d-flex align-items-center justify-content-center flex-column">
       <hr className="w-100" />
         <div class="w-100 mb-3">
@@ -103,6 +104,7 @@ export default function CardTemplate() {
         </div>
         <button className="btn btn-primary" onClick={doCapture}>تنزيل البطاقة</button>
       </div> */}
+      <button className="btn btn-primary mb-4" onClick={doCapture}>تحميل بطاقة المعايدة</button>
     </div>
   );
 }
