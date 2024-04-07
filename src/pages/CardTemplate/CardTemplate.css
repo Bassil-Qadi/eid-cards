@@ -101,6 +101,6 @@ button {
     }
 
     .card-template__container {
-        padding: 3rem 0;
+        padding-bottom: 3rem;
     }
 }
