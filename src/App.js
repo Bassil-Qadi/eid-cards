@@ -20,8 +20,8 @@ function App() {
 
   return (
     <div className="App">
-      {!showCardTemplate && <Intro />}
-      {showCardTemplate && <CardTemplate />}
+      {/* {!showCardTemplate && <Intro />} */}
+      <CardTemplate />
     </div>
   );
 }
