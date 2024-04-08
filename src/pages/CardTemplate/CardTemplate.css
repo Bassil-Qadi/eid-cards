@@ -99,6 +99,9 @@ button {
     font-family: 'SWCC-BOLD', sans-serif !important;
     width: 200px;
     height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .fullname-text {
     font-family: 'SWCC-BOLD', sans-serif;
