@@ -21,23 +21,23 @@
     min-height: 100vh;
     display: flex;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: center;
     flex-direction: column;
 }
 
 .eid-card {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     flex-direction: column;
     position: relative;
     width: 30rem;
     max-width: 400px;
     height: 50rem;
-    padding:2rem 1.75rem;
-    background: url("../../assets/Group\ 3.svg") bottom;
+    padding: 1.5rem 1.75rem;
+    background: url("../../assets/Asset\ 4.png") bottom;
     background-repeat: no-repeat;
-    background-color: #1A2947;
+    background-color: #1A1364;
     background-size: contain;
     /* border-radius: 12px; */
 }
@@ -53,7 +53,7 @@
     height: 50px;
     display: flex;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: space-between;
     /* background-color: #DDE8F6; */
     border-radius: 4px;
 }
@@ -63,14 +63,14 @@
     align-items: center;
     justify-content: flex-start;
     flex-direction: column;
-    margin-top: 60px;
+    /* margin-top: 60px; */
     font-family: 'SWCC-REG', sans-serif !important;
     height: 80%;
 }
 
-.eid-card-body img {
-    width: 250px;
-    height: 160px;
+.eid-card-body .main-img {
+    width: 300px;
+    height: 320px;
     margin-bottom: 40px;
 }
 
@@ -93,8 +93,8 @@ button {
     bottom: 60px;
     font-family: "Tajawal", sans-serif !important;
     border-radius: 40px !important;
-    background-color: #1a1364 !important;
-    color: white !important;
+    background-color: white !important;
+    color: #1a1364 !important;
     border: none !important;
     padding: 1rem 1.5rem !important;
     font-family: 'SWCC-REG', sans-serif !important;
@@ -121,9 +121,26 @@ input {
     z-index: 999;
 }
 
-/* .eid-card-text {
-    font-size: 1.1em;
-} */
+.eid-card-text {
+    font-size: 1.9em;
+    direction: rtl;
+}
+
+.eid-card__footer {
+    position: absolute;
+    bottom: 30px;
+    width: 85%;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.eid-card__footer small {
+    direction: rtl;
+    color: rgb(70, 91, 237);
+    font-size: .8rem;
+}
 
 @media screen and (max-width: 992px) {
 

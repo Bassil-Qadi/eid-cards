@@ -2,13 +2,15 @@ import React, { useState, useRef } from "react";
 import html2canvas from "html2canvas";
 import "./CardTemplate.css";
 
-import Img from "../../assets/Path 9.png";
-import Logo from "../../assets/Logo.png";
-import Bg from "../../assets/Group 3.svg";
+import Img from "../../assets/Asset 3.png";
+// import Logo from "../../assets/Logo.png";
+import WhiteLogo from "../../assets/Asset 1.png";
+import FontLogo from "../../assets/Asset 2.png";
+import SocialMediaIcons from "../../assets/Asset 5.png";
 
 export default function CardTemplate() {
-  const [fullName, setFullName] = useState("انقر هنا لـ كتابة الاسم (اختياري)");
-  const [position, setPosition] = useState("انقر هنا لـ كتابة المسمى الوظيفي (اختياري)");
+  const [fullName, setFullName] = useState("");
+  const [position, setPosition] = useState("");
 
   const cardRef = useRef();
 
@@ -22,7 +24,14 @@ export default function CardTemplate() {
 
   const doCapture = () => {
     let button = document.getElementById("download-btn");
+    let userInformation = document.getElementById("user-information");
+    
     button.style.display = "none";
+
+    if(!fullName || !position) {
+      userInformation.style.display = "none";
+    }
+
     html2canvas(document.getElementById("card")).then((canvas) => {
       simulateDownloadImageClick(
         canvas.toDataURL("image/jpeg", 0.9),
@@ -31,6 +40,7 @@ export default function CardTemplate() {
     });
 
     button.style.display = "block";
+    userInformation.style.display = "flex";
   };
 
   function simulateDownloadImageClick(uri, filename) {
@@ -60,27 +70,30 @@ export default function CardTemplate() {
     <div className="card-template__container">
       <div className="eid-card" id="card"  ref={cardRef}>
         <header>
-          <img className="img-fluid" width={"50px"} height={"50px"} src={Logo} alt="" />
+          <img className="img-fluid" width={"100px"} height={"66px"} src={FontLogo} alt="" />
+          <img className="img-fluid" width={"40px"} height={"40px"} src={WhiteLogo} alt="" />
         </header>
         <div className="eid-card-body">
-          <img src={Img} className="img-fluid" alt="عيدكم مبارك" />
-          <div className="row w-100 text-white mt-2">
-            <div className="col-6">
+          <img src={Img} className="img-fluid main-img me-4 mb-4" alt="عيدكم مبارك" />
+          <div className="row w-100 text-white text-center mb-2">
+            <div className="col-xs-12">
               <p className="mb-0 fw-bold eid-card-text">
-                I Wish you and your family a very joyful Eid Al-Fitr
-              </p>
-            </div>
-            <div className="col-6">
-              <p className="mb-0 fw-bold text-end eid-card-text">
-                أتمنى لك ولعائلتك عيد فطر سعيد
+                  كل عيد وأنتم في بهجة ودمتم للأعياد فرحة..
               </p>
             </div>
           </div>
-          <div className="row w-100 mt-2">
+          <div className="row w-100 mt-2" id="user-information">
             <div className="col-xl-12 text-white text-center d-flex alig-items-center justify-content-center flex-column">
-              <input  placeholder={fullName} className="mb-0 fw-bold fullname-text" />
-              <input  placeholder={position} className="mb-0 fw-bold position-text" />
+              <input  placeholder={"انقر هنا لـ كتابة الاسم (اختياري)"} className="mb-0 fw-bold fullname-text" />
+              <input  placeholder={"انقر هنا لـ كتابة المسمى الوظيفي (اختياري)"} className="mb-0 fw-bold position-text" />
             </div>
+          </div>
+          <div className="eid-card__footer">
+            <div className="d-flex align-items-center justify-content-center">
+              <img src={SocialMediaIcons} className="img-fluid me-2" width={"50px"} height={"50px"} alt="Social Media Icons" />
+              <small className="text-white">wtiira_ksa</small>
+            </div>
+            <small>للحفاظ على أساس الحياة..</small>
           </div>
         </div>
       <button className="btn btn-primary mt-4" id="download-btn" onClick={doCapture}>تحميل بطاقة المعايدة</button>
