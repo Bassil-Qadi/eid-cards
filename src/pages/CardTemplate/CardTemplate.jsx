@@ -40,6 +40,21 @@ export default function CardTemplate() {
     }
 
     html2canvas(document.getElementById("card")).then((canvas) => {
+       // Convert the canvas to a data URL
+    const imageDataURL = canvas.toDataURL();
+
+    // Share the data URL using navigator.share
+    if (navigator.share) {
+      navigator.share({
+        title: 'Shared Element Screenshot',
+        text: 'Check out this screenshot!',
+        url: imageDataURL
+      })
+        .then(() => console.log('Successfully shared'))
+        .catch((error) => console.log('Error sharing:', error));
+    } else {
+      console.log('Web Share API not supported');
+    }
       simulateDownloadImageClick(
         canvas.toDataURL("image/jpeg", 0.9),
         `Happy card by WTIIRA`
