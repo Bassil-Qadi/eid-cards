@@ -2,6 +2,8 @@ import React, { useState, useRef } from "react";
 import html2canvas from "html2canvas";
 import "./CardTemplate.css";
 
+import ShareButton from "../../components/ShareButton/ShareButton";
+
 import Img from "../../assets/Asset 3.png";
 // import Logo from "../../assets/Logo.png";
 import WhiteLogo from "../../assets/Asset 1.png";
@@ -89,7 +91,7 @@ export default function CardTemplate() {
             </div>
           </div>
           <div className="row w-100 mt-2">
-            <div className="col-xl-12 text-white text-center d-flex alig-items-center justify-content-center flex-column">
+            <div className="col-xl-12 text-white text-center d-flex alig-items-center justify-content-center flex-column gap-0">
               <input id="fullName"  placeholder={"انقر هنا لـ كتابة الاسم (اختياري)"} className="mb-0 fw-bold fullname-text" onChange={handleFullNameChange} />
               <input id="position" placeholder={"انقر هنا لـ كتابة المسمى الوظيفي (اختياري)"} className="mb-0 fw-bold position-text" onChange={handlePositionChange} />
             </div>
@@ -102,6 +104,7 @@ export default function CardTemplate() {
             <small>للحفاظ على أساس الحياة..</small>
           </div>
         </div>
+        <ShareButton />
       </div>
       <button className="btn btn-primary mt-4" id="download-btn" onClick={doCapture}>تحميل بطاقة المعايدة</button>
     </div>
