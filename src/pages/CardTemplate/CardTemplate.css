@@ -89,16 +89,16 @@ button {
     right: 0;
     margin-left: auto;
     margin-right: auto;
-    position: absolute;
-    bottom: 30px;
+    position: fixed;
+    bottom: 100px;
     border-radius: 40px !important;
     background-color: white !important;
     color: #1a1364 !important;
     border: none !important;
     padding: 1rem 1.5rem !important;
     font-family: 'SWCC-BOLD', sans-serif !important;
-    width: 210px;
-    height: 60px;
+    width: 200px;
+    height: 50px;
 }
 .fullname-text {
     font-family: 'SWCC-BOLD', sans-serif;
