@@ -2,7 +2,7 @@ import React, { useState, useRef } from "react";
 import html2canvas from "html2canvas";
 import "./CardTemplate.css";
 
-import ShareButton from "../../components/ShareButton/ShareButton";
+// import ShareButton from "../../components/ShareButton/ShareButton";
 
 import Img from "../../assets/Asset 3.png";
 // import Logo from "../../assets/Logo.png";
@@ -17,44 +17,29 @@ export default function CardTemplate() {
   const cardRef = useRef();
 
   const handleFullNameChange = (e) => {
-    setFullName(e.target.value)
-  }
+    setFullName(e.target.value);
+  };
 
   const handlePositionChange = (e) => {
-    setPosition(e.target.value)
-  }
+    setPosition(e.target.value);
+  };
 
   const doCapture = () => {
     let button = document.getElementById("download-btn");
     let fullNameEl = document.getElementById("fullName");
     let positionEl = document.getElementById("position");
-    
+
     button.style.display = "none";
 
-    if(!fullName) {
+    if (!fullName) {
       fullNameEl.style.display = "none";
     }
 
-    if(!position) {
+    if (!position) {
       positionEl.style.display = "none";
     }
 
     html2canvas(document.getElementById("card")).then((canvas) => {
-       // Convert the canvas to a data URL
-    const imageDataURL = canvas.toDataURL();
-
-    // Share the data URL using navigator.share
-    if (navigator.share) {
-      navigator.share({
-        title: 'Shared Element Screenshot',
-        text: 'Check out this screenshot!',
-        url: imageDataURL
-      })
-        .then(() => console.log('Successfully shared'))
-        .catch((error) => console.log('Error sharing:', error));
-    } else {
-      console.log('Web Share API not supported');
-    }
       simulateDownloadImageClick(
         canvas.toDataURL("image/jpeg", 0.9),
         `Happy card by WTIIRA`
@@ -64,6 +49,27 @@ export default function CardTemplate() {
     button.style.display = "block";
     fullNameEl.style.display = "block";
     positionEl.style.display = "block";
+  };
+
+  const handleShareCard = () => {
+    html2canvas(document.getElementById("card")).then((canvas) => {
+      // Convert the canvas to a data URL
+      const imageDataURL = canvas.toDataURL();
+
+      // Share the data URL using navigator.share
+      if (navigator.share) {
+        navigator
+          .share({
+            title: "Shared Element Screenshot",
+            text: "Check out this screenshot!",
+            url: imageDataURL,
+          })
+          .then(() => console.log("Successfully shared"))
+          .catch((error) => console.log("Error sharing:", error));
+      } else {
+        console.log("Web Share API not supported");
+      }
+    });
   };
 
   function simulateDownloadImageClick(uri, filename) {
@@ -91,37 +97,77 @@ export default function CardTemplate() {
 
   return (
     <div className="card-template__container">
-      <div className="eid-card" id="card"  ref={cardRef}>
+      <div className="eid-card" id="card" ref={cardRef}>
         <header>
-          <img className="img-fluid" width={"100px"} height={"66px"} src={FontLogo} alt="" />
-          <img className="img-fluid" width={"40px"} height={"40px"} src={WhiteLogo} alt="" />
+          <img
+            className="img-fluid"
+            width={"100px"}
+            height={"66px"}
+            src={FontLogo}
+            alt=""
+          />
+          <img
+            className="img-fluid"
+            width={"40px"}
+            height={"40px"}
+            src={WhiteLogo}
+            alt=""
+          />
         </header>
         <div className="eid-card-body">
-          <img src={Img} className="img-fluid main-img me-5 mb-4" alt="عيدكم مبارك" />
+          <img
+            src={Img}
+            className="img-fluid main-img me-5 mb-4"
+            alt="عيدكم مبارك"
+          />
           <div className="row w-100 text-white text-center mb-2">
             <div className="col-xs-12">
               <p className="mb-0 fw-bold eid-card-text">
-                  كل عيد وأنتم في بهجة ودمتم للأعياد فرحة..
+                كل عيد وأنتم في بهجة ودمتم للأعياد فرحة..
               </p>
             </div>
           </div>
           <div className="row w-100 mt-2">
             <div className="col-xl-12 text-white text-center d-flex alig-items-center justify-content-center flex-column gap-0">
-              <input id="fullName"  placeholder={"انقر هنا لـ كتابة الاسم (اختياري)"} className="mb-0 fw-bold fullname-text" onChange={handleFullNameChange} />
-              <input id="position" placeholder={"انقر هنا لـ كتابة المسمى الوظيفي (اختياري)"} className="mb-0 fw-bold position-text" onChange={handlePositionChange} />
+              <input
+                id="fullName"
+                placeholder={"انقر هنا لـ كتابة الاسم (اختياري)"}
+                className="mb-0 fw-bold fullname-text"
+                onChange={handleFullNameChange}
+              />
+              <input
+                id="position"
+                placeholder={"انقر هنا لـ كتابة المسمى الوظيفي (اختياري)"}
+                className="mb-0 fw-bold position-text"
+                onChange={handlePositionChange}
+              />
             </div>
           </div>
           <div className="eid-card__footer">
             <div className="d-flex align-items-center justify-content-center">
-              <img src={SocialMediaIcons} className="img-fluid me-2" width={"50px"} height={"50px"} alt="Social Media Icons" />
+              <img
+                src={SocialMediaIcons}
+                className="img-fluid me-2"
+                width={"50px"}
+                height={"50px"}
+                alt="Social Media Icons"
+              />
               <small className="text-white">wtiira_ksa</small>
             </div>
             <small>للحفاظ على أساس الحياة..</small>
           </div>
         </div>
-        <ShareButton />
+        <button className="btn btn-light" onClick={handleShareCard}>
+          Share Card
+        </button>
       </div>
-      <button className="btn btn-primary mt-4" id="download-btn" onClick={doCapture}>تحميل بطاقة المعايدة</button>
+      <button
+        className="btn btn-primary mt-4"
+        id="download-btn"
+        onClick={doCapture}
+      >
+        تحميل بطاقة المعايدة
+      </button>
     </div>
   );
 }
