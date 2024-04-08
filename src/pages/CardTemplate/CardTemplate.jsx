@@ -64,7 +64,7 @@ export default function CardTemplate() {
         </header>
         <div className="eid-card-body">
           <img src={Img} className="img-fluid" alt="عيدكم مبارك" />
-          <div className="row mt-4 w-100 text-white mt-2">
+          <div className="row w-100 text-white mt-2">
             <div className="col-6">
               <p className="mb-0 fw-bold eid-card-text">
                 I Wish you and your family a very joyful Eid Al-Fitr
@@ -76,7 +76,7 @@ export default function CardTemplate() {
               </p>
             </div>
           </div>
-          <div className="row w-100 mt-5">
+          <div className="row w-100 mt-2">
             <div className="col-xl-12 text-white text-center d-flex alig-items-center justify-content-center flex-column">
               <input  placeholder={fullName} className="mb-0 fw-bold fullname-text" />
               <input  placeholder={position} className="mb-0 fw-bold position-text" />

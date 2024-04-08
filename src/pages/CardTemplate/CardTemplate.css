@@ -64,7 +64,7 @@
     justify-content: flex-start;
     flex-direction: column;
     margin-top: 60px;
-    /* background-color: red; */
+    font-family: 'SWCC-REG', sans-serif !important;
     height: 80%;
 }
 
@@ -134,9 +134,5 @@ input {
 
     .eid-card__form {
         width: 90%;
-    }
-
-    .card-template__container {
-        padding-bottom: 3rem;
     }
 }
