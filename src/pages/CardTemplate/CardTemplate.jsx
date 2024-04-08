@@ -21,12 +21,16 @@ export default function CardTemplate() {
   }
 
   const doCapture = () => {
+    let button = document.getElementById("download-btn");
+    button.style.display = "none";
     html2canvas(document.getElementById("card")).then((canvas) => {
       simulateDownloadImageClick(
         canvas.toDataURL("image/png", 0.9),
         `Happy card by WTIIRA`
       );
     });
+
+    button.style.display = "block";
   };
 
   function simulateDownloadImageClick(uri, filename) {
@@ -75,13 +79,13 @@ export default function CardTemplate() {
           </div>
           <div className="row w-100 mt-5">
             <div className="col-xl-12 text-white text-center d-flex alig-items-center justify-content-center flex-column">
-              <input contentEditable placeholder={fullName} className="mb-0 fw-bold fullname-text" />
-              <input contentEditable placeholder={fullName} className="mb-0 fw-bold position-text" />
+              <input  placeholder={fullName} className="mb-0 fw-bold fullname-text" />
+              <input  placeholder={position} className="mb-0 fw-bold position-text" />
             </div>
           </div>
         </div>
+      <button className="btn btn-primary mt-4" id="download-btn" onClick={doCapture}>تحميل بطاقة المعايدة</button>
       </div>
-      <button className="btn btn-primary mt-4" onClick={doCapture}>تحميل بطاقة المعايدة</button>
     </div>
   );
 }
