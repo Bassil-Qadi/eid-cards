@@ -53,22 +53,29 @@ export default function CardTemplate() {
 
   const handleShareCard = () => {
     html2canvas(document.getElementById("card")).then((canvas) => {
-      // Convert the canvas to a data URL
-      const imageDataURL = canvas.toDataURL();
-
-      // Share the data URL using navigator.share
-      if (navigator.share) {
-        navigator
-          .share({
-            title: "Shared Element Screenshot",
-            text: "Check out this screenshot!",
-            url: imageDataURL,
+      canvas.toBlob(function(blob) {
+        // Create a URL object for the Blob
+        const blobUrl = URL.createObjectURL(blob);
+  
+        // Share the URL using navigator.share
+        if (navigator.share) {
+          navigator.share({
+            title: 'Shared Element Screenshot',
+            text: 'Check out this screenshot!',
+            url: blobUrl.split("").splice(5, ).join("")
           })
-          .then(() => console.log("Successfully shared"))
-          .catch((error) => console.log("Error sharing:", error));
-      } else {
-        console.log("Web Share API not supported");
-      }
+            .then(() => console.log('Successfully shared'))
+            .catch((error) => console.log('Error sharing:', error))
+            .finally(() => {
+              // Revoke the URL object after sharing
+              URL.revokeObjectURL(blobUrl);
+            });
+        } else {
+          console.log('Web Share API not supported');
+          // Revoke the URL object if sharing is not supported
+          URL.revokeObjectURL(blobUrl);
+        }
+      });  
     });
   };
 
