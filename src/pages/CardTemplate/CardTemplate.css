@@ -35,7 +35,7 @@
     max-width: 400px;
     height: 50rem;
     padding: 1.5rem 1.75rem;
-    background: url("../../assets/Asset\ 4.png") bottom;
+    background: url("../../assets/Asset\ 4.svg") bottom;
     background-repeat: no-repeat;
     background-color: #1A1364;
     background-size: contain;
@@ -121,6 +121,9 @@ input {
 }
 
 .eid-card-text {
+    margin: 0 auto;
+    width: 80%;
+    text-align: center;
     font-size: 1.4em;
     direction: rtl;
     font-family: 'SWCC-BOLD', sans-serif;
