@@ -91,13 +91,12 @@ button {
     margin-right: auto;
     position: absolute;
     bottom: 60px;
-    font-family: "Tajawal", sans-serif !important;
     border-radius: 40px !important;
     background-color: white !important;
     color: #1a1364 !important;
     border: none !important;
     padding: 1rem 1.5rem !important;
-    font-family: 'SWCC-REG', sans-serif !important;
+    font-family: 'SWCC-BOLD', sans-serif !important;
     width: 210px;
     height: 60px;
 }
@@ -122,8 +121,9 @@ input {
 }
 
 .eid-card-text {
-    font-size: 1.9em;
+    font-size: 1.4em;
     direction: rtl;
+    font-family: 'SWCC-BOLD', sans-serif;
 }
 
 .eid-card__footer {

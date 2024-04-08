@@ -24,12 +24,17 @@ export default function CardTemplate() {
 
   const doCapture = () => {
     let button = document.getElementById("download-btn");
-    let userInformation = document.getElementById("user-information");
+    let fullNameEl = document.getElementById("fullName");
+    let positionEl = document.getElementById("position");
     
     button.style.display = "none";
 
-    if(!fullName || !position) {
-      userInformation.style.display = "none";
+    if(!fullName) {
+      fullNameEl.style.display = "none";
+    }
+
+    if(!position) {
+      positionEl.style.display = "none";
     }
 
     html2canvas(document.getElementById("card")).then((canvas) => {
@@ -40,7 +45,8 @@ export default function CardTemplate() {
     });
 
     button.style.display = "block";
-    userInformation.style.display = "flex";
+    fullNameEl.style.display = "block";
+    positionEl.style.display = "block";
   };
 
   function simulateDownloadImageClick(uri, filename) {
@@ -82,10 +88,10 @@ export default function CardTemplate() {
               </p>
             </div>
           </div>
-          <div className="row w-100 mt-2" id="user-information">
+          <div className="row w-100 mt-2">
             <div className="col-xl-12 text-white text-center d-flex alig-items-center justify-content-center flex-column">
-              <input  placeholder={"انقر هنا لـ كتابة الاسم (اختياري)"} className="mb-0 fw-bold fullname-text" />
-              <input  placeholder={"انقر هنا لـ كتابة المسمى الوظيفي (اختياري)"} className="mb-0 fw-bold position-text" />
+              <input id="fullName"  placeholder={"انقر هنا لـ كتابة الاسم (اختياري)"} className="mb-0 fw-bold fullname-text" onChange={handleFullNameChange} />
+              <input id="position" placeholder={"انقر هنا لـ كتابة المسمى الوظيفي (اختياري)"} className="mb-0 fw-bold position-text" onChange={handlePositionChange} />
             </div>
           </div>
           <div className="eid-card__footer">
