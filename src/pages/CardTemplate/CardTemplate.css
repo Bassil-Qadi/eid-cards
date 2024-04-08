@@ -35,7 +35,7 @@
     max-width: 400px;
     height: 100vh;
     padding: 1.5rem 1.75rem;
-    background: url("../../assets/Asset\ 12.svg") bottom;
+    background: url("../../assets/Asset\ 11.png") bottom;
     background-repeat: no-repeat;
     background-color: #1A1364;
     background-size: contain;
@@ -98,7 +98,6 @@ button {
     padding: 1rem 1.5rem !important;
     font-family: 'SWCC-BOLD', sans-serif !important;
     width: 200px;
-    height: 50px;
     display: flex;
     align-items: center;
     justify-content: center;
