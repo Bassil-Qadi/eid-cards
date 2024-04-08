@@ -33,9 +33,9 @@
     position: relative;
     width: 30rem;
     max-width: 400px;
-    height: 50rem;
+    height: 100vh;
     padding: 1.5rem 1.75rem;
-    background: url("../../assets/Asset\ 4.png") bottom;
+    background: url("../../assets/Asset\ 12.svg") bottom;
     background-repeat: no-repeat;
     background-color: #1A1364;
     background-size: contain;
