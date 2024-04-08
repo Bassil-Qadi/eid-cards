@@ -80,7 +80,7 @@ export default function CardTemplate() {
           <img className="img-fluid" width={"40px"} height={"40px"} src={WhiteLogo} alt="" />
         </header>
         <div className="eid-card-body">
-          <img src={Img} className="img-fluid main-img me-4 mb-4" alt="عيدكم مبارك" />
+          <img src={Img} className="img-fluid main-img me-5 mb-4" alt="عيدكم مبارك" />
           <div className="row w-100 text-white text-center mb-2">
             <div className="col-xs-12">
               <p className="mb-0 fw-bold eid-card-text">
@@ -102,8 +102,8 @@ export default function CardTemplate() {
             <small>للحفاظ على أساس الحياة..</small>
           </div>
         </div>
-      <button className="btn btn-primary mt-4" id="download-btn" onClick={doCapture}>تحميل بطاقة المعايدة</button>
       </div>
+      <button className="btn btn-primary mt-4" id="download-btn" onClick={doCapture}>تحميل بطاقة المعايدة</button>
     </div>
   );
 }
