@@ -21,8 +21,8 @@ export default function CardTemplate() {
   }
 
   const doCapture = () => {
-    let button = document.getElementById("download-btn");
-    button.style.display = "none";
+    // let button = document.getElementById("download-btn");
+    // button.style.display = "none";
     html2canvas(document.getElementById("card")).then((canvas) => {
       simulateDownloadImageClick(
         canvas.toDataURL("image/png", 0.9),
@@ -30,7 +30,7 @@ export default function CardTemplate() {
       );
     });
 
-    button.style.display = "block";
+    // button.style.display = "block";
   };
 
   function simulateDownloadImageClick(uri, filename) {
