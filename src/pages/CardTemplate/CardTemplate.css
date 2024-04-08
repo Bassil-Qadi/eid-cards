@@ -35,7 +35,8 @@
     max-width: 400px;
     height: 50rem;
     padding:2rem 1.75rem;
-    /* background: url("../../assets/Group\ 3.svg") bottom no-repeat; */
+    background: url("../../assets/Group\ 3.svg") bottom;
+    background-repeat: no-repeat;
     background-color: #1A2947;
     background-size: contain;
     /* border-radius: 12px; */
@@ -45,7 +46,6 @@
     position: absolute;
     width: 100% !important;
     bottom: 0;
-    z-index: 997;
 }
 
 .eid-card header {
@@ -100,7 +100,6 @@ button {
     font-family: 'SWCC-REG', sans-serif !important;
     width: 210px;
     height: 60px;
-    z-index: 998;
 }
 .fullname-text {
     font-family: 'SWCC-BOLD', sans-serif;

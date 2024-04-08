@@ -21,16 +21,12 @@ export default function CardTemplate() {
   }
 
   const doCapture = () => {
-    let button = document.getElementById("download-btn");
-    button.style.display = "none";
     html2canvas(document.getElementById("card")).then((canvas) => {
       simulateDownloadImageClick(
         canvas.toDataURL("image/jpeg", 0.9),
         `Happy card by WTIIRA`
       );
     });
-
-    button.style.display = "block";
   };
 
   function simulateDownloadImageClick(uri, filename) {
@@ -59,7 +55,7 @@ export default function CardTemplate() {
   return (
     <div className="card-template__container">
       <div className="eid-card" id="card"  ref={cardRef}>
-        <img src={Bg} alt="" className="img-fluid bg-img" />
+        {/* <img src={Bg} alt="" className="img-fluid bg-img" /> */}
         <header>
           <img className="img-fluid" width={"50px"} height={"50px"} src={Logo} alt="" />
         </header>
