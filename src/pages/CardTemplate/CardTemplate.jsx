@@ -51,30 +51,6 @@ export default function CardTemplate() {
     positionEl.style.display = "block";
   };
 
-  const handleShareCard = () => {
-    html2canvas(document.getElementById("card")).then((canvas) => {
-      canvas.toBlob(function(blob) {
-        const files = [new File([blob], 'image.png', { type: blob.type })]
-          const shareData = {
-            text: 'Some text',
-            title: 'Some title',
-            files,
-          }
-          if (navigator.canShare(shareData)) {
-            try {
-              navigator.share(shareData)
-            } catch (err) {
-              if (err.name !== 'AbortError') {
-                console.error(err.name, err.message)
-              }
-            }
-          } else {
-            console.warn('Sharing not supported', shareData)
-          }
-      });  
-    });
-  };
-
   function simulateDownloadImageClick(uri, filename) {
     var link = document.createElement("a");
     if (typeof link.download !== "string") {
@@ -160,9 +136,6 @@ export default function CardTemplate() {
             <small>للحفاظ على أساس الحياة..</small>
           </div>
         </div>
-        <button className="btn btn-light" onClick={handleShareCard}>
-          Share Card
-        </button>
       </div>
       <button
         className="btn btn-primary mt-4"
