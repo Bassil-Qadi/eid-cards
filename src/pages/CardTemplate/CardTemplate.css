@@ -120,6 +120,7 @@ input {
     border: none;
     text-align: center;
     z-index: 999;
+    height: 24px;
 }
 
 .eid-card-text {

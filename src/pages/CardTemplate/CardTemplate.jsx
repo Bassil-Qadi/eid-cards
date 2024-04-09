@@ -106,7 +106,7 @@ export default function CardTemplate() {
               </p>
             </div>
           </div>
-          <div className="row w-100 mt-2">
+          <div className="row w-100 mt-3">
             <div className="col-xl-12 text-white text-center d-flex alig-items-center justify-content-center flex-column gap-0">
               <input
                 id="fullName"
